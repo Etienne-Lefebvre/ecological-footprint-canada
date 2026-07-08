@@ -74,7 +74,9 @@ function drawOverlay(place, type) {
   const areaM2 = fp.totalKm2 * 1e6;
   const color = TYPES[type].color;
 
-  const style = { color, weight: 2, fillColor: color, fillOpacity: 0.18 };
+  // interactive:false lets clicks pass through the fill to the markers beneath
+  // it, so you can still select a city whose dot sits inside another footprint.
+  const style = { color, weight: 2, fillColor: color, fillOpacity: 0.18, interactive: false };
 
   if (drawAsSquare) {
     overlayLayer = L.rectangle(squareBounds(place, areaM2), style);
