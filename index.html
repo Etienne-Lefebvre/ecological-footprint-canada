@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ecological Footprints of Canadian Cities</title>
+  <title>Ecological Footprints of Canadian Cities &amp; Provinces</title>
 
   <!-- Leaflet from CDN (fine on GitHub Pages; not subject to Artifact CSP) -->
   <link
@@ -19,18 +19,18 @@
     <header id="topbar">
       <h1>Ecological Footprints of Canadian Cities &amp; Provinces</h1>
       <p class="tagline">
-        Click a city dot or a province pin to see the area of productive ecosystems
-        its population needs &mdash; at Canadian living standards.
+        Click a city dot or a province pin. The map draws how much productive land
+        and water it takes to keep that population going at Canadian living standards.
       </p>
     </header>
 
     <div id="main">
-      <div id="map" role="application" aria-label="Map of Canada with selectable cities"></div>
+      <div id="map" role="application" aria-label="Map of Canada with selectable cities and provinces"></div>
 
       <aside id="sidebar">
         <div id="readout" class="panel">
-          <h2 id="readout-city">Select a city</h2>
-          <p class="hint">Tap a marker on the map to draw its ecological footprint.</p>
+          <h2 id="readout-city">Pick a place</h2>
+          <p class="hint">Click any city dot or province pin to draw its footprint.</p>
           <dl id="readout-stats" hidden>
             <div><dt>Population</dt><dd id="stat-pop"></dd></div>
             <div><dt>Per-capita footprint</dt><dd id="stat-percap"></dd></div>
@@ -44,20 +44,21 @@
         <details id="methodology" class="panel">
           <summary>Methodology &amp; caveats</summary>
           <div class="method-body">
-            <p><strong>What the circle means.</strong> The overlay is a circle whose
-            <em>area</em> equals the city's total ecological footprint. It shows
-            <em>scale</em>, not <em>location</em>: a city's real footprint is scattered
-            across the entire globe and its oceans, not clustered around the city.</p>
+            <p><strong>The circle is a size, not a place.</strong> Its area equals the
+            total ecological footprint. The real land that feeds and supplies a city or
+            province is scattered across the whole planet and its oceans, and most of it
+            is nowhere near the dot you clicked. The circle just puts that total area on
+            the map so you can see how big it is.</p>
 
-            <p><strong>Global hectares (gha) &ne; physical hectares.</strong> A gha is
-            normalized to world-average biological productivity. Canadian land is generally
-            less productive than the world average, so the true physical area would be
-            <em>larger</em> than the circle drawn here.</p>
+            <p><strong>A global hectare isn't a hectare you can walk across.</strong> One
+            gha is a hectare of world-average land productivity. Canadian land tends to be
+            less productive than that average, so the real area on the ground would be
+            bigger than the circle you see.</p>
 
-            <p><strong>Per-capita figure is a national average.</strong> Unless noted,
-            each city uses Canada's national average of 8.1 gha/person. Real cities vary
-            with income, density, climate, and transport &mdash; treat this as an
-            educational approximation, not a measurement.</p>
+            <p><strong>The per-person number is a national average.</strong> Every place
+            here uses Canada's average of 8.1 gha per person unless a note says otherwise.
+            Real footprints move around with income, density, climate, and how people get
+            about, so read these as rough teaching figures rather than exact measurements.</p>
 
             <p class="sources">
               Populations: <span id="src-pop"></span><br />
