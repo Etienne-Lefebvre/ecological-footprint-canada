@@ -1,40 +1,55 @@
 {
   "meta": {
-    "populationSource": "Statistics Canada, 2021 Census — Census Metropolitan Areas (CMA) and provinces/territories",
+    "populationSource": "Statistics Canada 2021 Census (Canadian CMAs); national census / UN urban-agglomeration estimates for international metro areas (approximate)",
     "populationSourceUrl": "https://www12.statcan.gc.ca/census-recensement/2021/",
-    "efSource": "Global Footprint Network, National Footprint and Biocapacity Accounts (Canada national average per-capita Ecological Footprint)",
+    "efSource": "Global Footprint Network / FoDaFo, National Footprint and Biocapacity Accounts, 2026 Edition (Ecological Footprint of consumption, data year 2023)",
     "efSourceUrl": "https://data.footprintnetwork.org/",
-    "defaultPerCapitaEfGha": 8.1,
-    "notes": "perCapitaEfGha defaults to the Canadian national average (8.1 gha). Where a place-specific published figure is used, it is noted in efNote. areaKm2 is the land area from StatsCan. For cities it is the CMA land area (includes rural land, so the ratio is conservative); for provinces it is the provincial land area."
+    "defaultPerCapitaEfGha": 6.856,
+    "notes": "perCapitaEfGha is each place's national per-capita Ecological Footprint of consumption from the GFN NFBA 2026 Edition (data year 2023). Canadian places default to Canada's 6.856 gha; international cities use their own country's figure, noted in efNote. areaKm2 is CMA land area for Canadian cities, provincial land area for provinces, and approximate metro-area extent for international cities."
   },
   "cities": [
-    { "name": "Toronto",           "lat": 43.6532,  "lon": -79.3832,  "population": 6202225, "areaKm2": 5902, "perCapitaEfGha": 8.1 },
-    { "name": "Montreal",          "lat": 45.5019,  "lon": -73.5674,  "population": 4291732, "areaKm2": 4604, "perCapitaEfGha": 8.1 },
-    { "name": "Vancouver",         "lat": 49.2827,  "lon": -123.1207, "population": 2642825, "areaKm2": 2878, "perCapitaEfGha": 8.1 },
-    { "name": "Ottawa–Gatineau",   "lat": 45.4215,  "lon": -75.6972,  "population": 1488307, "areaKm2": 8376, "perCapitaEfGha": 8.1 },
-    { "name": "Calgary",           "lat": 51.0447,  "lon": -114.0719, "population": 1481806, "areaKm2": 5110, "perCapitaEfGha": 8.1 },
-    { "name": "Edmonton",          "lat": 53.5461,  "lon": -113.4938, "population": 1418118, "areaKm2": 9439, "perCapitaEfGha": 8.1 },
-    { "name": "Quebec City",       "lat": 46.8139,  "lon": -71.2080,  "population": 839311,  "areaKm2": 3349, "perCapitaEfGha": 8.1 },
-    { "name": "Winnipeg",          "lat": 49.8951,  "lon": -97.1384,  "population": 834678,  "areaKm2": 5306, "perCapitaEfGha": 8.1 },
-    { "name": "Hamilton",          "lat": 43.2557,  "lon": -79.8711,  "population": 785184,  "areaKm2": 1371, "perCapitaEfGha": 8.1 },
-    { "name": "Kitchener–Waterloo","lat": 43.4516,  "lon": -80.4925,  "population": 575847,  "areaKm2": 1369, "perCapitaEfGha": 8.1 },
-    { "name": "London",            "lat": 42.9849,  "lon": -81.2453,  "population": 543551,  "areaKm2": 2660, "perCapitaEfGha": 8.1 },
-    { "name": "Halifax",           "lat": 44.6488,  "lon": -63.5752,  "population": 465703,  "areaKm2": 5475, "perCapitaEfGha": 8.1 },
-    { "name": "Victoria",          "lat": 48.4284,  "lon": -123.3656, "population": 397237,  "areaKm2": 696,  "perCapitaEfGha": 8.1 }
+    { "name": "Toronto",           "country": "Canada", "lat": 43.6532,  "lon": -79.3832,  "population": 6202225, "areaKm2": 5902, "perCapitaEfGha": 6.856 },
+    { "name": "Montreal",          "country": "Canada", "lat": 45.5019,  "lon": -73.5674,  "population": 4291732, "areaKm2": 4604, "perCapitaEfGha": 6.856 },
+    { "name": "Vancouver",         "country": "Canada", "lat": 49.2827,  "lon": -123.1207, "population": 2642825, "areaKm2": 2878, "perCapitaEfGha": 6.856 },
+    { "name": "Ottawa–Gatineau",   "country": "Canada", "lat": 45.4215,  "lon": -75.6972,  "population": 1488307, "areaKm2": 8376, "perCapitaEfGha": 6.856 },
+    { "name": "Calgary",           "country": "Canada", "lat": 51.0447,  "lon": -114.0719, "population": 1481806, "areaKm2": 5110, "perCapitaEfGha": 6.856 },
+    { "name": "Edmonton",          "country": "Canada", "lat": 53.5461,  "lon": -113.4938, "population": 1418118, "areaKm2": 9439, "perCapitaEfGha": 6.856 },
+    { "name": "Quebec City",       "country": "Canada", "lat": 46.8139,  "lon": -71.2080,  "population": 839311,  "areaKm2": 3349, "perCapitaEfGha": 6.856 },
+    { "name": "Winnipeg",          "country": "Canada", "lat": 49.8951,  "lon": -97.1384,  "population": 834678,  "areaKm2": 5306, "perCapitaEfGha": 6.856 },
+    { "name": "Hamilton",          "country": "Canada", "lat": 43.2557,  "lon": -79.8711,  "population": 785184,  "areaKm2": 1371, "perCapitaEfGha": 6.856 },
+    { "name": "Kitchener–Waterloo","country": "Canada", "lat": 43.4516,  "lon": -80.4925,  "population": 575847,  "areaKm2": 1369, "perCapitaEfGha": 6.856 },
+    { "name": "London",            "country": "Canada", "lat": 42.9849,  "lon": -81.2453,  "population": 543551,  "areaKm2": 2660, "perCapitaEfGha": 6.856 },
+    { "name": "Halifax",           "country": "Canada", "lat": 44.6488,  "lon": -63.5752,  "population": 465703,  "areaKm2": 5475, "perCapitaEfGha": 6.856 },
+    { "name": "Victoria",          "country": "Canada", "lat": 48.4284,  "lon": -123.3656, "population": 397237,  "areaKm2": 696,  "perCapitaEfGha": 6.856 },
+
+    { "name": "New York",          "country": "United States",      "lat": 40.7128, "lon": -74.0060,  "population": 19500000, "areaKm2": 17319, "perCapitaEfGha": 7.142, "efNote": "Uses the United States' national footprint of 7.14 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "Los Angeles",       "country": "United States",      "lat": 34.0522, "lon": -118.2437, "population": 12900000, "areaKm2": 12562, "perCapitaEfGha": 7.142, "efNote": "Uses the United States' national footprint of 7.14 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "Chicago",           "country": "United States",      "lat": 41.8781, "lon": -87.6298,  "population": 9400000,  "areaKm2": 18640, "perCapitaEfGha": 7.142, "efNote": "Uses the United States' national footprint of 7.14 gha/person (GFN NFBA 2026, data year 2023)." },
+
+    { "name": "Mexico City",       "country": "Mexico",             "lat": 19.4326, "lon": -99.1332,  "population": 21800000, "areaKm2": 7866,  "perCapitaEfGha": 2.624, "efNote": "Uses Mexico's national footprint of 2.62 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "Guadalajara",       "country": "Mexico",             "lat": 20.6597, "lon": -103.3496, "population": 5250000,  "areaKm2": 2734,  "perCapitaEfGha": 2.624, "efNote": "Uses Mexico's national footprint of 2.62 gha/person (GFN NFBA 2026, data year 2023)." },
+
+    { "name": "San José",          "country": "Costa Rica",         "lat": 9.9281,  "lon": -84.0907,  "population": 2200000,  "areaKm2": 1967,  "perCapitaEfGha": 2.66,  "efNote": "Uses Costa Rica's national footprint of 2.66 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "San Salvador",      "country": "El Salvador",        "lat": 13.6929, "lon": -89.2182,  "population": 1800000,  "areaKm2": 886,   "perCapitaEfGha": 2.27,  "efNote": "Uses El Salvador's national footprint of 2.27 gha/person (GFN NFBA 2026, data year 2023)." },
+
+    { "name": "Havana",            "country": "Cuba",               "lat": 23.1136, "lon": -82.3666,  "population": 2130000,  "areaKm2": 728,   "perCapitaEfGha": 1.765, "efNote": "Uses Cuba's national footprint of 1.77 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "Santo Domingo",     "country": "Dominican Republic", "lat": 18.4861, "lon": -69.9312,  "population": 3300000,  "areaKm2": 1401,  "perCapitaEfGha": 2.403, "efNote": "Uses the Dominican Republic's national footprint of 2.40 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "Kingston",          "country": "Jamaica",            "lat": 17.9714, "lon": -76.7931,  "population": 1240000,  "areaKm2": 480,   "perCapitaEfGha": 1.956, "efNote": "Uses Jamaica's national footprint of 1.96 gha/person (GFN NFBA 2026, data year 2023)." },
+    { "name": "Port-au-Prince",    "country": "Haiti",              "lat": 18.5944, "lon": -72.3074,  "population": 2800000,  "areaKm2": 735,   "perCapitaEfGha": 0.64,  "efNote": "Uses Haiti's national footprint of 0.64 gha/person (GFN NFBA 2026, data year 2023)." }
   ],
   "provinces": [
-    { "name": "Ontario",                     "lat": 50.0,  "lon": -86.0,   "population": 14223942, "areaKm2": 908608,  "perCapitaEfGha": 8.1 },
-    { "name": "Quebec",                      "lat": 52.5,  "lon": -72.0,   "population": 8501833,  "areaKm2": 1365128, "perCapitaEfGha": 8.1 },
-    { "name": "British Columbia",            "lat": 54.5,  "lon": -125.0,  "population": 5000879,  "areaKm2": 925186,  "perCapitaEfGha": 8.1 },
-    { "name": "Alberta",                     "lat": 54.5,  "lon": -114.5,  "population": 4262635,  "areaKm2": 640081,  "perCapitaEfGha": 8.1 },
-    { "name": "Manitoba",                    "lat": 54.5,  "lon": -98.0,   "population": 1342153,  "areaKm2": 553556,  "perCapitaEfGha": 8.1 },
-    { "name": "Saskatchewan",                "lat": 54.5,  "lon": -106.0,  "population": 1132505,  "areaKm2": 591670,  "perCapitaEfGha": 8.1 },
-    { "name": "Nova Scotia",                 "lat": 45.1,  "lon": -63.0,   "population": 969383,   "areaKm2": 53338,   "perCapitaEfGha": 8.1 },
-    { "name": "New Brunswick",               "lat": 46.6,  "lon": -66.3,   "population": 775610,   "areaKm2": 71388,   "perCapitaEfGha": 8.1 },
-    { "name": "Newfoundland and Labrador",   "lat": 53.0,  "lon": -60.5,   "population": 510550,   "areaKm2": 373872,  "perCapitaEfGha": 8.1 },
-    { "name": "Prince Edward Island",        "lat": 46.4,  "lon": -63.2,   "population": 154331,   "areaKm2": 5660,    "perCapitaEfGha": 8.1 },
-    { "name": "Northwest Territories",       "lat": 64.5,  "lon": -119.0,  "population": 41070,    "areaKm2": 1183085, "perCapitaEfGha": 8.1 },
-    { "name": "Yukon",                       "lat": 63.5,  "lon": -135.0,  "population": 40232,    "areaKm2": 474391,  "perCapitaEfGha": 8.1 },
-    { "name": "Nunavut",                     "lat": 70.0,  "lon": -92.0,   "population": 36858,    "areaKm2": 1936113, "perCapitaEfGha": 8.1 }
+    { "name": "Ontario",                     "country": "Canada", "lat": 50.0,  "lon": -86.0,   "population": 14223942, "areaKm2": 908608,  "perCapitaEfGha": 6.856 },
+    { "name": "Quebec",                      "country": "Canada", "lat": 52.5,  "lon": -72.0,   "population": 8501833,  "areaKm2": 1365128, "perCapitaEfGha": 6.856 },
+    { "name": "British Columbia",            "country": "Canada", "lat": 54.5,  "lon": -125.0,  "population": 5000879,  "areaKm2": 925186,  "perCapitaEfGha": 6.856 },
+    { "name": "Alberta",                     "country": "Canada", "lat": 54.5,  "lon": -114.5,  "population": 4262635,  "areaKm2": 640081,  "perCapitaEfGha": 6.856 },
+    { "name": "Manitoba",                    "country": "Canada", "lat": 54.5,  "lon": -98.0,   "population": 1342153,  "areaKm2": 553556,  "perCapitaEfGha": 6.856 },
+    { "name": "Saskatchewan",                "country": "Canada", "lat": 54.5,  "lon": -106.0,  "population": 1132505,  "areaKm2": 591670,  "perCapitaEfGha": 6.856 },
+    { "name": "Nova Scotia",                 "country": "Canada", "lat": 45.1,  "lon": -63.0,   "population": 969383,   "areaKm2": 53338,   "perCapitaEfGha": 6.856 },
+    { "name": "New Brunswick",               "country": "Canada", "lat": 46.6,  "lon": -66.3,   "population": 775610,   "areaKm2": 71388,   "perCapitaEfGha": 6.856 },
+    { "name": "Newfoundland and Labrador",   "country": "Canada", "lat": 53.0,  "lon": -60.5,   "population": 510550,   "areaKm2": 373872,  "perCapitaEfGha": 6.856 },
+    { "name": "Prince Edward Island",        "country": "Canada", "lat": 46.4,  "lon": -63.2,   "population": 154331,   "areaKm2": 5660,    "perCapitaEfGha": 6.856 },
+    { "name": "Northwest Territories",       "country": "Canada", "lat": 64.5,  "lon": -119.0,  "population": 41070,    "areaKm2": 1183085, "perCapitaEfGha": 6.856 },
+    { "name": "Yukon",                       "country": "Canada", "lat": 63.5,  "lon": -135.0,  "population": 40232,    "areaKm2": 474391,  "perCapitaEfGha": 6.856 },
+    { "name": "Nunavut",                     "country": "Canada", "lat": 70.0,  "lon": -92.0,   "population": 36858,    "areaKm2": 1936113, "perCapitaEfGha": 6.856 }
   ]
 }

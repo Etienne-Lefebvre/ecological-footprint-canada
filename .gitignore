@@ -1,0 +1,6 @@
+# Source data package (reference only — not served by the site)
+*.xlsx
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

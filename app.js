@@ -10,7 +10,7 @@ const HECTARE_M2 = 10000; // 1 hectare = 10,000 m^2
 
 // Per-place-type presentation (colour + area label).
 const TYPES = {
-  city:     { color: "#3fb950", areaLabel: "CMA land area" },
+  city:     { color: "#3fb950", areaLabel: "city area" },
   province: { color: "#d29922", areaLabel: "provincial land area" },
 };
 
@@ -101,7 +101,8 @@ function drawOverlay(place, type) {
 // Sidebar readout -----------------------------------------------------------
 function updateReadout(place, type) {
   const fp = footprintFor(place);
-  document.getElementById("readout-city").textContent = place.name;
+  document.getElementById("readout-city").textContent =
+    place.country && place.country !== "Canada" ? `${place.name}, ${place.country}` : place.name;
   document.querySelector("#readout .hint").hidden = true;
   const stats = document.getElementById("readout-stats");
   stats.hidden = false;
@@ -124,8 +125,8 @@ function updateReadout(place, type) {
 // Popup content -------------------------------------------------------------
 function popupHtml(place, type) {
   const fp = footprintFor(place);
-  const areaLabel = type === "province" ? "provincial area" : "CMA land area";
-  return `<b>${place.name}</b><br />
+  const areaLabel = type === "province" ? "provincial area" : "city area";
+  return `<b>${place.name}</b>${place.country ? `, ${place.country}` : ""}<br />
     Population: ${fmtInt.format(place.population)}<br />
     Footprint: <b>${formatArea(fp.totalKm2)}</b><br />
     ${fp.ratioToArea ? `≈ ${formatRatio(fp.ratioToArea)} than the ${areaLabel}` : ""}`;
@@ -193,7 +194,7 @@ async function init() {
   // City markers
   const cityStyle = {
     radius: 6,
-    color: "#e6edf3",
+    color: "#000",
     weight: 2,
     fillColor: "#3fb950",
     fillOpacity: 1,
@@ -204,6 +205,14 @@ async function init() {
       .bindPopup(popupHtml(city, "city"));
     marker.on("click", () => selectPlace(city, "city"));
   });
+
+  // Fit the initial view to every marker (Canada down to the Caribbean).
+  const allPoints = [...(data.cities || []), ...(data.provinces || [])].map(
+    (p) => [p.lat, p.lon]
+  );
+  if (allPoints.length) {
+    map.fitBounds(L.latLngBounds(allPoints), { padding: [30, 30] });
+  }
 
   document.getElementById("toggle-shape").addEventListener("change", (e) => {
     drawAsSquare = e.target.checked;

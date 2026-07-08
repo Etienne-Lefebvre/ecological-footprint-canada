@@ -1,11 +1,16 @@
 # Ecological Footprints of Canadian Cities & Provinces
 
-An interactive map that shows, when you click a Canadian **city** (green dot) or
+An interactive map that shows, when you click a **city** (green dot) or a Canadian
 **province/territory** (amber pin), an overlay whose **area equals that place's
 total ecological footprint** — the area of productive ecosystems its population
-needs, at Canadian living standards.
+needs at its national living standards.
 
-Provinces are a useful contrast: for densely populated ones (Ontario, PEI) the
+It covers Canadian cities and provinces plus a set of American, Mexican, Central
+American, and Caribbean cities. Each city uses its own country's per-capita
+footprint, so the contrasts are stark: a US city needs about 7.1 gha per person
+while a Haitian city needs about 0.64.
+
+Provinces add another contrast: for densely populated ones (Ontario, PEI) the
 footprint is *larger* than the province's own land area, while for vast, thinly
 populated ones (Quebec, Alberta, Nunavut) it is *smaller*.
 
@@ -18,10 +23,13 @@ build step and no backend, so it hosts for free on GitHub Pages.
 total ecological footprint = population × per-capita footprint (gha)
 ```
 
-- **Population** — Statistics Canada 2021 Census Metropolitan Area (CMA) figures.
-- **Per-capita footprint** — Canada's national average of **8.1 global hectares
-  (gha) per person**, from the Global Footprint Network. A gha is one hectare of
-  world-average biological productivity.
+- **Population** — Statistics Canada 2021 Census figures for Canadian cities and
+  provinces; approximate metro-area populations for international cities.
+- **Per-capita footprint** — each place's national **Ecological Footprint of
+  consumption** in global hectares (gha) from the Global Footprint Network's
+  **National Footprint and Biocapacity Accounts, 2026 Edition (data year 2023)**.
+  Canada is **6.856 gha/person**. A gha is one hectare of world-average biological
+  productivity.
 
 The overlay is a circle (or square) whose area equals that total, using
 `radius = √(area / π)`. One gha is drawn as one hectare.
@@ -44,16 +52,14 @@ All data lives in [`cities.json`](cities.json), split into a `cities` array and 
 province/territory to `provinces`):
 
 ```json
-{ "name": "Saskatoon", "lat": 52.1332, "lon": -106.6700,
-  "population": 317480, "areaKm2": 5890, "perCapitaEfGha": 8.1 }
+{ "name": "Saskatoon", "country": "Canada", "lat": 52.1332, "lon": -106.6700,
+  "population": 317480, "areaKm2": 5890, "perCapitaEfGha": 6.856 }
 ```
 
 For provinces, `areaKm2` is the provincial land area; for cities it is the CMA
-land area.
-
-To use a city-specific published footprint instead of the national average, set
-`perCapitaEfGha` and add an `efNote` string citing the source; it will show in
-the sidebar.
+land area (Canadian) or approximate metro extent (international). Set
+`perCapitaEfGha` to that country's figure and add an `efNote` string citing it;
+the note shows in the sidebar when the value differs from Canada's default.
 
 ## Running locally
 
@@ -76,5 +82,5 @@ python -m http.server 8000
 ## Data sources
 
 - Statistics Canada, 2021 Census — <https://www12.statcan.gc.ca/census-recensement/2021/>
-- Global Footprint Network, National Footprint and Biocapacity Accounts —
-  <https://data.footprintnetwork.org/>
+- Global Footprint Network / FoDaFo, National Footprint and Biocapacity Accounts,
+  2026 Edition (data year 2023) — <https://data.footprintnetwork.org/>
