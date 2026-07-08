@@ -155,7 +155,7 @@ function provincePinIcon() {
 async function init() {
   map = L.map("map", { minZoom: 3, worldCopyJump: true }).setView([59.5, -96.35], 4);
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
       '&copy; <a href="https://carto.com/attributions">CARTO</a>',
