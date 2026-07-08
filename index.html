@@ -17,10 +17,10 @@
 <body>
   <div id="app">
     <header id="topbar">
-      <h1>Ecological Footprints of Canadian Cities</h1>
+      <h1>Ecological Footprints of Canadian Cities &amp; Provinces</h1>
       <p class="tagline">
-        Click a city to see the area of productive ecosystems its population needs
-        &mdash; at Canadian living standards.
+        Click a city dot or a province pin to see the area of productive ecosystems
+        its population needs &mdash; at Canadian living standards.
       </p>
     </header>
 
@@ -32,11 +32,11 @@
           <h2 id="readout-city">Select a city</h2>
           <p class="hint">Tap a marker on the map to draw its ecological footprint.</p>
           <dl id="readout-stats" hidden>
-            <div><dt>Population (CMA)</dt><dd id="stat-pop"></dd></div>
+            <div><dt>Population</dt><dd id="stat-pop"></dd></div>
             <div><dt>Per-capita footprint</dt><dd id="stat-percap"></dd></div>
             <div><dt>Total ecological footprint</dt><dd id="stat-total"></dd></div>
             <div><dt>Footprint radius (if a circle)</dt><dd id="stat-radius"></dd></div>
-            <div><dt>Compared to CMA land area</dt><dd id="stat-ratio"></dd></div>
+            <div><dt id="dt-ratio">Compared to land area</dt><dd id="stat-ratio"></dd></div>
           </dl>
           <p id="ef-note" class="ef-note" hidden></p>
         </div>
@@ -67,6 +67,10 @@
         </details>
 
         <div class="panel controls">
+          <div class="legend">
+            <span class="legend-item"><span class="swatch city"></span> City (CMA)</span>
+            <span class="legend-item"><span class="swatch province"></span> Province / territory</span>
+          </div>
           <label class="toggle">
             <input type="checkbox" id="toggle-shape" />
             Draw as a square instead of a circle

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "populationSource": "Statistics Canada, 2021 Census — Census Metropolitan Areas (CMA)",
+    "populationSource": "Statistics Canada, 2021 Census — Census Metropolitan Areas (CMA) and provinces/territories",
     "populationSourceUrl": "https://www12.statcan.gc.ca/census-recensement/2021/",
     "efSource": "Global Footprint Network, National Footprint and Biocapacity Accounts (Canada national average per-capita Ecological Footprint)",
     "efSourceUrl": "https://data.footprintnetwork.org/",
     "defaultPerCapitaEfGha": 8.1,
-    "notes": "perCapitaEfGha defaults to the Canadian national average (8.1 gha). Where a city-specific published figure is used, it is noted in efNote. areaKm2 is the CMA land area from StatsCan and includes substantial rural land, so the 'times larger' ratio is conservative relative to the built-up urban footprint."
+    "notes": "perCapitaEfGha defaults to the Canadian national average (8.1 gha). Where a place-specific published figure is used, it is noted in efNote. areaKm2 is the land area from StatsCan. For cities it is the CMA land area (includes rural land, so the ratio is conservative); for provinces it is the provincial land area."
   },
   "cities": [
     { "name": "Toronto",           "lat": 43.6532,  "lon": -79.3832,  "population": 6202225, "areaKm2": 5902, "perCapitaEfGha": 8.1 },
@@ -21,5 +21,20 @@
     { "name": "London",            "lat": 42.9849,  "lon": -81.2453,  "population": 543551,  "areaKm2": 2660, "perCapitaEfGha": 8.1 },
     { "name": "Halifax",           "lat": 44.6488,  "lon": -63.5752,  "population": 465703,  "areaKm2": 5475, "perCapitaEfGha": 8.1 },
     { "name": "Victoria",          "lat": 48.4284,  "lon": -123.3656, "population": 397237,  "areaKm2": 696,  "perCapitaEfGha": 8.1 }
+  ],
+  "provinces": [
+    { "name": "Ontario",                     "lat": 50.0,  "lon": -86.0,   "population": 14223942, "areaKm2": 908608,  "perCapitaEfGha": 8.1 },
+    { "name": "Quebec",                      "lat": 52.5,  "lon": -72.0,   "population": 8501833,  "areaKm2": 1365128, "perCapitaEfGha": 8.1 },
+    { "name": "British Columbia",            "lat": 54.5,  "lon": -125.0,  "population": 5000879,  "areaKm2": 925186,  "perCapitaEfGha": 8.1 },
+    { "name": "Alberta",                     "lat": 54.5,  "lon": -114.5,  "population": 4262635,  "areaKm2": 640081,  "perCapitaEfGha": 8.1 },
+    { "name": "Manitoba",                    "lat": 54.5,  "lon": -98.0,   "population": 1342153,  "areaKm2": 553556,  "perCapitaEfGha": 8.1 },
+    { "name": "Saskatchewan",                "lat": 54.5,  "lon": -106.0,  "population": 1132505,  "areaKm2": 591670,  "perCapitaEfGha": 8.1 },
+    { "name": "Nova Scotia",                 "lat": 45.1,  "lon": -63.0,   "population": 969383,   "areaKm2": 53338,   "perCapitaEfGha": 8.1 },
+    { "name": "New Brunswick",               "lat": 46.6,  "lon": -66.3,   "population": 775610,   "areaKm2": 71388,   "perCapitaEfGha": 8.1 },
+    { "name": "Newfoundland and Labrador",   "lat": 53.0,  "lon": -60.5,   "population": 510550,   "areaKm2": 373872,  "perCapitaEfGha": 8.1 },
+    { "name": "Prince Edward Island",        "lat": 46.4,  "lon": -63.2,   "population": 154331,   "areaKm2": 5660,    "perCapitaEfGha": 8.1 },
+    { "name": "Northwest Territories",       "lat": 64.5,  "lon": -119.0,  "population": 41070,    "areaKm2": 1183085, "perCapitaEfGha": 8.1 },
+    { "name": "Yukon",                       "lat": 63.5,  "lon": -135.0,  "population": 40232,    "areaKm2": 474391,  "perCapitaEfGha": 8.1 },
+    { "name": "Nunavut",                     "lat": 70.0,  "lon": -92.0,   "population": 36858,    "areaKm2": 1936113, "perCapitaEfGha": 8.1 }
   ]
 }
