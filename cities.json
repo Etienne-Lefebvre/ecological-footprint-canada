@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "populationSource": "Statistics Canada, 2021 Census — Census Metropolitan Areas (CMA)",
+    "populationSourceUrl": "https://www12.statcan.gc.ca/census-recensement/2021/",
+    "efSource": "Global Footprint Network, National Footprint and Biocapacity Accounts (Canada national average per-capita Ecological Footprint)",
+    "efSourceUrl": "https://data.footprintnetwork.org/",
+    "defaultPerCapitaEfGha": 8.1,
+    "notes": "perCapitaEfGha defaults to the Canadian national average (8.1 gha). Where a city-specific published figure is used, it is noted in efNote. areaKm2 is the CMA land area from StatsCan and includes substantial rural land, so the 'times larger' ratio is conservative relative to the built-up urban footprint."
+  },
+  "cities": [
+    { "name": "Toronto",           "lat": 43.6532,  "lon": -79.3832,  "population": 6202225, "areaKm2": 5902, "perCapitaEfGha": 8.1 },
+    { "name": "Montreal",          "lat": 45.5019,  "lon": -73.5674,  "population": 4291732, "areaKm2": 4604, "perCapitaEfGha": 8.1 },
+    { "name": "Vancouver",         "lat": 49.2827,  "lon": -123.1207, "population": 2642825, "areaKm2": 2878, "perCapitaEfGha": 8.1 },
+    { "name": "Ottawa–Gatineau",   "lat": 45.4215,  "lon": -75.6972,  "population": 1488307, "areaKm2": 8376, "perCapitaEfGha": 8.1 },
+    { "name": "Calgary",           "lat": 51.0447,  "lon": -114.0719, "population": 1481806, "areaKm2": 5110, "perCapitaEfGha": 8.1 },
+    { "name": "Edmonton",          "lat": 53.5461,  "lon": -113.4938, "population": 1418118, "areaKm2": 9439, "perCapitaEfGha": 8.1 },
+    { "name": "Quebec City",       "lat": 46.8139,  "lon": -71.2080,  "population": 839311,  "areaKm2": 3349, "perCapitaEfGha": 8.1 },
+    { "name": "Winnipeg",          "lat": 49.8951,  "lon": -97.1384,  "population": 834678,  "areaKm2": 5306, "perCapitaEfGha": 8.1 },
+    { "name": "Hamilton",          "lat": 43.2557,  "lon": -79.8711,  "population": 785184,  "areaKm2": 1371, "perCapitaEfGha": 8.1 },
+    { "name": "Kitchener–Waterloo","lat": 43.4516,  "lon": -80.4925,  "population": 575847,  "areaKm2": 1369, "perCapitaEfGha": 8.1 },
+    { "name": "London",            "lat": 42.9849,  "lon": -81.2453,  "population": 543551,  "areaKm2": 2660, "perCapitaEfGha": 8.1 },
+    { "name": "Halifax",           "lat": 44.6488,  "lon": -63.5752,  "population": 465703,  "areaKm2": 5475, "perCapitaEfGha": 8.1 },
+    { "name": "Victoria",          "lat": 48.4284,  "lon": -123.3656, "population": 397237,  "areaKm2": 696,  "perCapitaEfGha": 8.1 }
+  ]
+}

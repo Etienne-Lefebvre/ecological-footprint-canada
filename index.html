@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ecological Footprints of Canadian Cities</title>
+
+  <!-- Leaflet from CDN (fine on GitHub Pages; not subject to Artifact CSP) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <h1>Ecological Footprints of Canadian Cities</h1>
+      <p class="tagline">
+        Click a city to see the area of productive ecosystems its population needs
+        &mdash; at Canadian living standards.
+      </p>
+    </header>
+
+    <div id="main">
+      <div id="map" role="application" aria-label="Map of Canada with selectable cities"></div>
+
+      <aside id="sidebar">
+        <div id="readout" class="panel">
+          <h2 id="readout-city">Select a city</h2>
+          <p class="hint">Tap a marker on the map to draw its ecological footprint.</p>
+          <dl id="readout-stats" hidden>
+            <div><dt>Population (CMA)</dt><dd id="stat-pop"></dd></div>
+            <div><dt>Per-capita footprint</dt><dd id="stat-percap"></dd></div>
+            <div><dt>Total ecological footprint</dt><dd id="stat-total"></dd></div>
+            <div><dt>Footprint radius (if a circle)</dt><dd id="stat-radius"></dd></div>
+            <div><dt>Compared to CMA land area</dt><dd id="stat-ratio"></dd></div>
+          </dl>
+          <p id="ef-note" class="ef-note" hidden></p>
+        </div>
+
+        <details id="methodology" class="panel">
+          <summary>Methodology &amp; caveats</summary>
+          <div class="method-body">
+            <p><strong>What the circle means.</strong> The overlay is a circle whose
+            <em>area</em> equals the city's total ecological footprint. It shows
+            <em>scale</em>, not <em>location</em>: a city's real footprint is scattered
+            across the entire globe and its oceans, not clustered around the city.</p>
+
+            <p><strong>Global hectares (gha) &ne; physical hectares.</strong> A gha is
+            normalized to world-average biological productivity. Canadian land is generally
+            less productive than the world average, so the true physical area would be
+            <em>larger</em> than the circle drawn here.</p>
+
+            <p><strong>Per-capita figure is a national average.</strong> Unless noted,
+            each city uses Canada's national average of 8.1 gha/person. Real cities vary
+            with income, density, climate, and transport &mdash; treat this as an
+            educational approximation, not a measurement.</p>
+
+            <p class="sources">
+              Populations: <span id="src-pop"></span><br />
+              Footprint: <span id="src-ef"></span>
+            </p>
+          </div>
+        </details>
+
+        <div class="panel controls">
+          <label class="toggle">
+            <input type="checkbox" id="toggle-shape" />
+            Draw as a square instead of a circle
+          </label>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>
